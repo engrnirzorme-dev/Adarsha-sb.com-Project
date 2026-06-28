@@ -1,0 +1,59 @@
+name: CI - 2026
+
+on:
+  push:
+    paths:
+      - "2026/**"
+      - ".github/workflows/ci-2026.yml"
+      - "AGENTS.md"
+      - "scripts/**"
+  pull_request:
+    paths:
+      - "2026/**"
+      - ".github/workflows/ci-2026.yml"
+      - "AGENTS.md"
+      - "scripts/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 2026
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          coverage: none
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: "2026/package-lock.json"
+
+      - name: Install PHP deps
+        run: |
+          if [ -f composer.json ]; then
+            composer install --no-interaction --no-progress
+          fi
+
+      - name: Install JS deps
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          fi
+
+      - name: Lint or test
+        run: |
+          if [ -f phpunit.xml ] || [ -f phpunit.xml.dist ]; then
+            vendor/bin/phpunit
+          fi
+          if [ -f package.json ] && npm run | grep -q " test"; then
+            npm test
+          fi
