@@ -1,0 +1,7 @@
+# CODEOWNERS
+/2026/ @engrnirzorme-dev
+/archive/2025/ @engrnirzorme-dev
+/archive/2024/ @engrnirzorme-dev
+/scripts/ @engrnirzorme-dev
+/.github/workflows/ @engrnirzorme-dev
+/AGENTS.md @engrnirzorme-dev

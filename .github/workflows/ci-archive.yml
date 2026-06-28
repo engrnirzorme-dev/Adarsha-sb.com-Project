@@ -1,0 +1,54 @@
+name: CI - Archive snapshots
+
+on:
+  push:
+    paths:
+      - "archive/2024/**"
+      - "archive/2025/**"
+      - ".github/workflows/ci-archive.yml"
+      - "AGENTS.md"
+      - "scripts/**"
+  pull_request:
+    paths:
+      - "archive/2024/**"
+      - "archive/2025/**"
+      - ".github/workflows/ci-archive.yml"
+      - "AGENTS.md"
+      - "scripts/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - archive/2024
+          - archive/2025
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          coverage: none
+
+      - name: Install PHP deps
+        run: |
+          if [ -f composer.json ]; then
+            composer install --no-interaction --no-progress
+          fi
+
+      - name: Smoke check
+        run: |
+          if [ -f phpunit.xml ] || [ -f phpunit.xml.dist ]; then
+            vendor/bin/phpunit
+          else
+            echo "No phpunit config present; skipping."
+          fi
