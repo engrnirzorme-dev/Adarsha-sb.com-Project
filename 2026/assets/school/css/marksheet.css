@@ -1,0 +1,128 @@
+@font-face {
+  font-family: kalpurush;
+  src: url('front/kalpurush.woff');
+}
+
+body {
+	font-family: kalpurush;
+	margin: 0;
+}
+
+.marksheet {
+	width: 770px;
+	height: 1040px; 
+	overflow: hidden;
+	page-break-after: always;
+	margin: auto;
+}
+.marksheet .head {
+	overflow: hidden;
+	margin: 2px 0;
+}
+.marksheet .head .logo {
+	float: left;
+	width: 9%;
+	text-align: right;
+	margin: 6px 0 0 0;
+}
+.marksheet .head .logo img {
+	width: 50px;
+}
+.marksheet .head .title {
+	float: left;
+	margin: 10px 0 0 0;
+	width: 40%;
+	text-align: center;
+}
+.marksheet .head .title h2,
+.marksheet .head .title h3 {
+	margin: 0;
+	line-height: 1em;
+}
+.marksheet .head table {
+	float: right;
+	width: 50%;
+	text-align: center;
+	line-height: 1em;
+}
+.marksheet .head table tr td {
+	border: 1px solid #000 !important;
+	vertical-align: middle !important;
+	font-size: 10px;
+	line-height: 1.2em;
+}
+.marksheet .head table tr:nth-child(1){
+	font-weight: 700;
+}
+
+
+.marksheet .student-info {
+	margin-bottom: 3px;
+}
+/*
+.marksheet .student-info tr td:nth-child(1) {
+	width:33%;
+}
+.marksheet .student-info tr td:nth-child(2), 
+.marksheet .student-info tr td:nth-child(3),
+.marksheet .student-info tr td:nth-child(4){
+	width:10%;		
+}
+.marksheet .student-info tr td:nth-child(5) {
+	width:19%;		
+}
+.marksheet .student-info tr td:nth-child(6) {
+	width:18%;
+}
+*/
+.marksheet .student-info tr td {
+	border: none !important;
+	text-align: left;
+}
+
+
+.marksheet table {
+    width: 100%;
+	border-collapse: collapse;
+}
+.marksheet table tr th, .marksheet table tr td {
+	border: 1px solid #000 !important;
+	vertical-align: middle !important;
+	font-size: 12px;
+	line-height: 1.4em;
+	text-align: center;
+}
+
+.marksheet table tr:nth-child(1),
+.marksheet table tr:nth-child(2) {
+    text-align: center;
+}
+
+.rotate {
+	width: 25px;
+	transform: rotate(-90deg);
+	white-space:nowrap;
+	margin-top: 15px;
+}
+.signature {
+	overflow: hidden;
+	width: 90%;
+	margin: 60px auto 0;
+}
+.signature .left {
+	float: left;
+}
+.signature .right {
+	float: right;
+}
+.signature .left::before,
+.signature .right::before {
+	display: block;
+	content: '';
+	height: 2px;
+	width: 100%;
+	background: #444;
+}
+.text-left {
+	text-align: left !important;
+}

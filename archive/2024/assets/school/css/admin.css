@@ -1,0 +1,76 @@
+@font-face {
+    font-family: kalpurush;
+    src: url('front/kalpurush.woff');
+}
+
+body {
+    font-family: kalpurush;
+}
+
+.input_find,
+.select_find {
+    width: 100% !important;
+}
+
+div.pagination {
+    padding-top: 10px;
+    width: 100%;
+}
+
+div.pagination div.pagi_info {
+    float: right;
+    line-height: 30px;
+}
+
+div.pagination ul {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+div.pagination ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px 10px;
+    border-right: 1px solid #CCCCCC;
+}
+
+div.pagination ul li:last-child {
+    border: none;
+}
+
+div.pagination ul li.active {
+    background: #e5e5e5;
+}
+
+div.pagination ul li.pagi_active {
+    cursor: pointer;
+}
+
+div.pagination ul li.pagi_active:hover {
+    background: #e5e5e5;
+}
+
+.student-img {
+    width: 50px;
+    height: 50px;
+}
+
+.appstudents td {
+    vertical-align: middle !important;
+}
+
+.applicant-info {
+    width: 99%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.applicant-info tr th,
+.applicant-info tr td {
+    border: 1px dashed #ccc !important;
+    padding: 7px 10px !important;
+    vertical-align: middle !important;
+}

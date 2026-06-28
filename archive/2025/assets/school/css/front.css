@@ -1,0 +1,8 @@
+@font-face {
+  font-family: kalpurush;
+  src: url('front/kalpurush.woff');
+}
+
+body {
+    font-family: kalpurush;
+}

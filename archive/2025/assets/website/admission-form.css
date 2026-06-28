@@ -1,0 +1,82 @@
+@font-face {
+  font-family: kalpurush;
+  src: url('kalpurush.woff');
+}
+body {
+	font-family: kalpurush;
+}
+.main-header{
+	background: #00C0EF;
+	color: #fff;
+	min-height: 130px;
+	max-height: 300px;
+	margin-bottom: 10px;
+}
+.content {
+	padding-top: 0;
+}
+.main-head-content {
+	padding: 15px;
+}
+.site-logo {
+	text-align: right;
+}
+.site-logo img {
+	height: 100px;
+}
+.site-title {
+	margin-top: 20px;
+}
+.site-title h2{
+	font-family: kalpurush;
+	text-align: left;
+	margin: 0;
+}
+
+
+
+.result {
+	width: 100%;
+}
+.result tr th, .result tr td {
+	border: 1px dashed #ccc !important;
+	padding: 7px 10px !important;
+	vertical-align: middle !important;
+}
+.result tr:nth-child(1),
+.result tr:nth-child(2){
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px){
+	.site-logo,
+	.site-title h2{
+		text-align: center;
+	}
+	.site-title h2{
+		font-size: 20px;
+	}
+}
